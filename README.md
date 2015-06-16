@@ -83,6 +83,7 @@ Web version will include a way of distributing your logic.js snippets to the com
 ### Contributing 
 Contributions are welcome in order to implement the future plans and also enhance the current version of foreachline. 
 
+Whatever you have in your mind , lets discuss. [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/scriptnull/foreachline?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ### License 
 This tool is licensed under the [MIT License](https://github.com/scriptnull/foreachline/blob/master/LICENSE). 
