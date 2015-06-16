@@ -53,7 +53,7 @@ Banana
 
  If you want to convert them to html list elements
 ```javascript
-line = "<li>" + line + "</line>" ; 
+line = "<li>" + line + "</li>" ; 
 ```
 and you will have 
 ```
@@ -62,7 +62,7 @@ and you will have
 <li>Banana</li>
 ```
 
-If you want need to create javascript objects 
+If you want to create JavaScript objects 
 ```javasctipt 
 line = { id : lineNumber , name : line };
 ```
@@ -78,7 +78,7 @@ and I can continue giving examples all night.
 
 ### Plans 
 Currently the main plan is making a web version of foreachline which will allow people to use it on web browser.
-Web version will include a way of distributing your logic.js snippets to the community. The primary of distributing will be done via gists. 
+Web version will include a way of distributing your logic.js snippets with the community. The primary of distributing will be done via gists. 
 
 ### Contributing 
 Contributions are welcome in order to implement the future plans and also enhance the current version of foreachline. 
