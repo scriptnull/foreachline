@@ -1,0 +1,29 @@
+{
+  "name": "foreachline",
+  "version": "1.0.0",
+  "description": "Do something for each line of a file with JS ",
+  "main": "index.js",
+  "bin": {
+    "foreachline" : "index.js" ,
+    "fel" : "index.js"
+  } ,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scriptnull/foreachline.git"
+  },
+  "keywords": [
+    "foreach",
+    "line",
+    "file",
+    "parsing"
+  ],
+  "author": "Vishnu Bharathi <vishnubharathi04@gmail.com> (https://twitter.com/scriptnull)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scriptnull/foreachline/issues"
+  },
+  "homepage": "https://github.com/scriptnull/foreachline"
+}
