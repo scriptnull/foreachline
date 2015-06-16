@@ -1,6 +1,3 @@
-### foreachline
-Do something for each line of a file with JS 
-
 ### Install 
 ```bash 
 npm install -g foreachline
