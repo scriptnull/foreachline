@@ -1,12 +1,12 @@
 {
   "name": "foreachline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Do something for each line of a file with JS ",
   "main": "index.js",
   "bin": {
-    "foreachline" : "index.js" ,
-    "fel" : "index.js"
-  } ,
+    "foreachline": "index.js",
+    "fel": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
