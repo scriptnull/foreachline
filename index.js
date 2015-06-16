@@ -6,6 +6,7 @@ var path = require('path');
 
 var src =process.argv[2];
 var js = process.argv[3];
+var res = process.argv[4];
 var tempJsTemplate = path.join(__dirname, 'temp.js');
 var tempJs = path.join(__dirname, 'realtemp.js');
 
@@ -27,7 +28,7 @@ if (src && js) {
 									var newLines = lines.reduce(function (previous, current, index, arr) {
 										return previous + "\r\n" + current;
 									});
-									fs.writeFile(src, newLines, function (err) {
+									fs.writeFile(res ? res : src, newLines, function (err) {
 										if(err)
 											console.log(err);
 										else 
