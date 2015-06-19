@@ -1,0 +1,36 @@
+<md-card>
+	<md-toolbar>
+		<h2 class="md-toolbar-tools" style="background-color : #CB3837;">Playground</h2>
+	</md-toolbar>
+	<md-card-content>
+		<md-tabs md-dynamic-height md-border-bottom>
+			<md-tab label="Source">
+				<md-content class="md-padding">
+					<textarea ui-codemirror="{
+										      lineNumbers: true,
+										      lineWrapping : true,
+										      mode: 'text' ,
+											   onLoad : codemirrorLoaded 
+										     }" ></textarea>
+				</md-content>
+			</md-tab>
+			<md-tab label="Logic">
+				<textarea ui-codemirror="{
+												      lineNumbers: true,
+												      lineWrapping : true,
+												      mode: 'javascript'
+												    }"></textarea>
+				<div>
+					<md-button class="md-raised md-primary" ng-click=" getOutput(); ">Do the Stuff</md-button>
+				</div>
+			</md-tab>
+		</md-tabs>
+	</md-card-content>
+</md-card>
+<script src="bower_components/mode/javascript/javascript.js"></script>
+<md-card>
+	<md-card-content>
+		<iframe src="https://ghbtns.com/github-btn.html?user=scriptnull&repo=foreachline&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://scriptnull.github.io/foreachline" data-text="Do something with every line of a file with JS" data-via="scriptnull" data-size="large" data-hashtags="javascript">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</md-card-content>
+</md-card>
