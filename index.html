@@ -9,17 +9,19 @@
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.ie.min.css" />
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="bower_components/codemirror/lib/codemirror.css">
-    <!--<link rel="stylesheet" type="text/css" href="http://codemirror.net/theme/twilight.css"/>--></head>
+    <!--<link rel="stylesheet" type="text/css" href="http://codemirror.net/theme/twilight.css"/>-->
+    <style>
+      .toolbar_custom {
+        background-color : #CB3837;  
+      }
+      .code_snip {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
   
   <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="bower_components/codemirror/lib/codemirror.js"></script>
-    <script src="bower_components/angular-ui-codemirror/ui-codemirror.min.js"></script>
-    <script src="app.js"></script>
     <div class="github-fork-ribbon-wrapper right">
       <div class="github-fork-ribbon" style="background-color : green;">
         <a href="https://github.com/scriptnull/foreachline">Fork me on GitHub</a>
@@ -31,22 +33,49 @@
           <md-toolbar>
             <h1 class="md-toolbar-tools" style="background-color : #CB3837;">foreachline</h1>
           </md-toolbar>
-          <md-content layout-padding="">
-            <md-menu-item>
-              <md-button href="/#/">Playground</md-button>
-            </md-menu-item>
-          </md-content>
-          <md-content layout-padding="">
-            <md-menu-item>
-              <md-button href="/#/intro">What is this ?</md-button>
-            </md-menu-item>
-          </md-content>
+          <md-menu-item>
+            <md-button layout="row" layout-align="center center" class="md-button" href="/#/">PLAYGROUND</md-button>
+          </md-menu-item>
+          <md-divider></md-divider>
+          <md-menu-item>
+            <md-button layout="row" layout-align="center center" class="md-button" href="/#/intro">WHAT IS THIS ?</md-button>
+          </md-menu-item>
+          <md-divider></md-divider>
+          <md-menu-item>
+            <md-button layout="row" layout-align="center center" class="md-button" href="/#/offline">OFFLINE TOOL</md-button>
+          </md-menu-item>
+          <md-divider></md-divider>
+          <md-menu-item>
+            <md-button layout="row" layout-align="center center" class="md-button" href="/#/snippets">SNIPPETS</md-button>
+          </md-menu-item>
+          <md-divider></md-divider>
+          <md-menu-item>
+            <div layout="row" layout-align="center center">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://scriptnull.github.io/foreachline" data-text="Do something with every line of a file with JS"
+              data-via="scriptnull" data-size="small" data-hashtags="javascript">Tweet</a>&nbsp;
+              <!--<iframe src="https://ghbtns.com/github-btn.html?user=scriptnull&repo=foreachline&type=star&count=true&size=small"
+              frameborder="0" scrolling="0" width="78px" height="20px"></iframe>-->
+            </div>
+          </md-menu-item>
         </md-sidenav>
         <md-content flex="" layout-padding="">
           <div ng-view></div>
         </md-content>
       </section>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="bower_components/codemirror/lib/codemirror.js"></script>
+    <script src="bower_components/codemirror/mode/javascript/javascript.js"></script>
+    <script src="app.js"></script>
+    <div id="tempScriptDiv"></div>
+    <script>
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
   </body>
 
 </html>

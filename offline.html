@@ -1,0 +1,44 @@
+<md-card>
+	<md-toolbar class="toolbar_custom">
+		<div class="md-toolbar-tools">
+			<h2 class="md-flex">OFFLINE TOOL</h2>
+		</div>
+	</md-toolbar>
+	<md-content layout-padding>
+		<h3>Install</h3>
+		<p>
+			<b>foreachline</b> is available offline as a command line tool. You can install it via npm
+			<div style="background-color : black ; color : white;">
+				<br />
+				<div layout=row layout-align="center start">
+					<code>npm install foreachline -g</code>
+				</div>
+				<br />
+			</div>
+		</p>
+		<h3>Command Line</h3>
+		<p>You can use either
+			<b>foreachline</b> or simply
+			<b>fel</b> to invoke the program.
+			<div style="background-color : black ; color : white;">
+				<br />
+				<div layout=row layout-align="center start">
+					<code>foreachline src.txt logic.js</code>
+				</div>
+				<br />
+				<div layout=row layout-align="center start">or</div>
+				<br />
+				<div layout=row layout-align="center start">
+					<code>fel src.txt logic.js res.txt</code>
+				</div>
+				<br />
+			</div>
+		</p>
+		<h3>Arguments</h3>
+		<ul>
+			<li>src.txt - Source file for data.</li>
+			<li>logic.js - contains logic for mapping the data.</li>
+			<li>res.txt [Optional] - Results will be written to res.txt if specified , else will be written back to src.txt.</li>
+		</ul>
+	</md-content>
+</md-card>

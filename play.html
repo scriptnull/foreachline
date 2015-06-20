@@ -1,36 +1,46 @@
 <md-card>
-	<md-toolbar>
-		<h2 class="md-toolbar-tools" style="background-color : #CB3837;">Playground</h2>
+	<md-toolbar class="toolbar_custom">
+		<div class="md-toolbar-tools">
+			<h2 class="md-flex">SOURCE</h2>
+		</div>
 	</md-toolbar>
-	<md-card-content>
-		<md-tabs md-dynamic-height md-border-bottom>
-			<md-tab label="Source">
-				<md-content class="md-padding">
-					<textarea ui-codemirror="{
-										      lineNumbers: true,
-										      lineWrapping : true,
-										      mode: 'text' ,
-											   onLoad : codemirrorLoaded 
-										     }" ></textarea>
-				</md-content>
-			</md-tab>
-			<md-tab label="Logic">
-				<textarea ui-codemirror="{
-												      lineNumbers: true,
-												      lineWrapping : true,
-												      mode: 'javascript'
-												    }"></textarea>
-				<div>
-					<md-button class="md-raised md-primary" ng-click=" getOutput(); ">Do the Stuff</md-button>
-				</div>
-			</md-tab>
-		</md-tabs>
-	</md-card-content>
+	<textarea id=sourceTextArea></textarea>
 </md-card>
-<script src="bower_components/mode/javascript/javascript.js"></script>
 <md-card>
-	<md-card-content>
-		<iframe src="https://ghbtns.com/github-btn.html?user=scriptnull&repo=foreachline&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://scriptnull.github.io/foreachline" data-text="Do something with every line of a file with JS" data-via="scriptnull" data-size="large" data-hashtags="javascript">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</md-card-content>
+	<md-toolbar class="toolbar_custom">
+		<div class="md-toolbar-tools">
+			<h2 class="md-flex">LOGIC</h2>
+		</div>
+	</md-toolbar>
+<textarea id=logicTextArea></textarea>
+<div layout="row" layout-align="center start">
+	<md-button class="md-raised md-primary" ng-click=" getOutput($event); ">get result</md-button>
+</div>
 </md-card>
+
+<md-card>
+	<md-toolbar class="toolbar_custom">
+		<div class="md-toolbar-tools">
+			<h2 class="md-flex">RESULT</h2>
+		</div>
+	</md-toolbar>
+<textarea id=resultTextArea></textarea>
+</md-card>
+<script>
+	window.loadCodeMirror = function () {
+        console.log('inside codemirror');
+        console.log(document.getElementById('sourceTextArea') && document.getElementById('logicTextArea') && document.getElementById('resultTextArea'));
+
+        if (document.getElementById('sourceTextArea') && document.getElementById('logicTextArea') && document.getElementById('resultTextArea')) {
+			window.sourceCodeMirror = CodeMirror.fromTextArea(document.getElementById('sourceTextArea'), { lineNumbers: true, lineWrapping: true, mode: 'text' , readOnly : false });
+			window.sourceCodeMirror.setValue("Apple \nOrange \nBanana");
+			
+
+			window.logicCodeMirror = CodeMirror.fromTextArea(document.getElementById('logicTextArea'), { lineNumbers: true, lineWrapping: true, mode: 'javascript' , readOnly : false });
+			window.logicCodeMirror.setValue("// remember just two variables , line and lineNumber \n line = 'I love ' + line ;  ");
+
+			window.resultCodeMirror = CodeMirror.fromTextArea(document.getElementById('resultTextArea'), { lineNumbers: true, lineWrapping: true, mode: 'text' , readOnly : false });
+        }
+	};
+window.loadCodeMirror();
+</script>
