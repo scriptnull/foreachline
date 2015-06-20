@@ -23,7 +23,7 @@
   
   <body>
     <div class="github-fork-ribbon-wrapper right">
-      <div class="github-fork-ribbon" style="background-color : green;">
+      <div class="github-fork-ribbon" class="toolbar_custom">
         <a href="https://github.com/scriptnull/foreachline">Fork me on GitHub</a>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <section layout="row" flex="">
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
           <md-toolbar>
-            <h1 class="md-toolbar-tools" style="background-color : #CB3837;">foreachline</h1>
+            <h1 layout="row" layout-align="center center" class="md-toolbar-tools toolbar_custom" >foreachline</h1>
           </md-toolbar>
           <md-menu-item>
             <md-button layout="row" layout-align="center center" class="md-button" href="/foreachline/#/">PLAYGROUND</md-button>
@@ -47,6 +47,10 @@
           <md-divider></md-divider>
           <md-menu-item>
             <md-button layout="row" layout-align="center center" class="md-button" href="/foreachline/#/snippets">SNIPPETS</md-button>
+          </md-menu-item>
+          <md-divider></md-divider>
+          <md-menu-item>
+            <md-button layout="row" layout-align="center center" class="md-button" href="/foreachline/#/contribute">CONTRIBUTE</md-button>
           </md-menu-item>
           <md-divider></md-divider>
           <md-menu-item>

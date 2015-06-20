@@ -22,6 +22,9 @@ foreachline.config(['$routeProvider',
 		}).when('/snippets', {
 			templateUrl: 'snippets.html',
 			controller: 'SnippetCtrl'
+		}).when('/contribute', {
+			templateUrl: 'contribute.html',
+			controller: 'SnippetCtrl'
 		}).
 			otherwise({
 			redirectTo: '/intro'
