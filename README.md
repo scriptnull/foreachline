@@ -1,3 +1,5 @@
+Online version - http://scriptnull.github.io/foreachline
+
 ### Install 
 ```bash 
 npm install -g foreachline
@@ -74,11 +76,10 @@ and I can continue giving examples all night.
 
 
 ### Plans 
-Currently the main plan is making a web version of foreachline which will allow people to use it on web browser.
-Web version will include a way of distributing your logic.js snippets with the community. The primary of distributing will be done via gists. 
+Yeah ! We made it to the [web browser](http://scriptnull.github.io/foreachline)  , as per the plan. Right now , there is no  major plans for foreachline. 
 
 ### Contributing 
-Contributions are welcome in order to implement the future plans and also to enhance the current version of foreachline. 
+Please visit the [project page](http://scriptnull.github.io/foreachline/#/contribute) to have idea about contibuting towards foreachline.
 
 Whatever you have in your mind , lets discuss. [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/scriptnull/foreachline?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
