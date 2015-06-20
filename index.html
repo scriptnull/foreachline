@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.ie.min.css" />
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="bower_components/codemirror/lib/codemirror.css">
-    <!--<link rel="stylesheet" type="text/css" href="http://codemirror.net/theme/twilight.css"/>-->
+    <link rel="stylesheet" type="text/css" href="http://codemirror.net/theme/twilight.css"/>
     <style>
       .toolbar_custom {
         background-color : #CB3837;  
@@ -53,8 +53,6 @@
             <div layout="row" layout-align="center center">
               <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://scriptnull.github.io/foreachline" data-text="Do something with every line of a file with JS"
               data-via="scriptnull" data-size="small" data-hashtags="javascript">Tweet</a>&nbsp;
-              <!--<iframe src="https://ghbtns.com/github-btn.html?user=scriptnull&repo=foreachline&type=star&count=true&size=small"
-              frameborder="0" scrolling="0" width="78px" height="20px"></iframe>-->
             </div>
           </md-menu-item>
         </md-sidenav>
@@ -71,6 +69,7 @@
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="bower_components/codemirror/lib/codemirror.js"></script>
     <script src="bower_components/codemirror/mode/javascript/javascript.js"></script>
+    <script src="bower_components/angular-ui-codemirror/ui-codemirror.min.js"></script>
     <script src="app.js"></script>
     <div id="tempScriptDiv"></div>
     <script>
@@ -81,10 +80,10 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    
       ga('create', 'UA-64308743-1', 'auto');
       ga('send', 'pageview');
     </script>
+    
   </body>
 
 </html>

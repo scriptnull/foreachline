@@ -1,11 +1,23 @@
-          <md-card>
-            <md-toolbar>
-              <h2 class="md-toolbar-tools"  style="background-color : #CB3837;">SNIPPETS</h2>
-            </md-toolbar>
-            <md-card-content>
-              <p>
-                <b>foreachline</b> is a very simple tool. The core idea is not building something complex, rather build something simple that can solve very simple problems faced everyday.
-              </p>
-             
-            </md-card-content>
-          </md-card>
+<div ng-controller="SnippetCtrl">
+  <md-content class="md-padding">
+    <md-card ng-repeat="snippet in snippetsArray">
+      <md-list-item class="md-1-line">
+        <img ng-src="{{ snippet.gist_avatar }}" class="md-avatar" />
+        <div class="md-list-item-text">
+          <h2>{{ snippet.gist_filename }}</h2>
+        </div>
+      </md-list-item>
+      <md-card-content>
+        <div>
+        <br />
+      <div ng-model=" snippet.gist_content "  ui-codemirror=" { lineNumbers: true,
+                             readOnly: 'nocursor',
+                             theme : 'twilight' , 
+                             lineWrapping : true,
+                             mode: 'javascript' }" style="height : auto " ></div>
+        <br />
+        </div>
+      </md-card-content>
+    </md-card>
+  </md-content>
+</div>

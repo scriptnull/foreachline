@@ -3,7 +3,7 @@
 
 
 
-var foreachline = angular.module('foreachline', ['ngMaterial', 'ngRoute']);
+var foreachline = angular.module('foreachline', ['ngMaterial', 'ngRoute', 'ui.codemirror']);
 
 foreachline.config(['$routeProvider',
 	function ($routeProvider) {
@@ -21,14 +21,13 @@ foreachline.config(['$routeProvider',
 			controller: 'AppCtrl'
 		}).when('/snippets', {
 			templateUrl: 'snippets.html',
-			controller: 'AppCtrl'
+			controller: 'SnippetCtrl'
 		}).
 			otherwise({
 			redirectTo: '/intro'
 		});
 	}
 ]);
-
 
 
 var AppCtrl = foreachline.controller('AppCtrl', function ($scope, $mdDialog) {
@@ -54,6 +53,43 @@ var AppCtrl = foreachline.controller('AppCtrl', function ($scope, $mdDialog) {
 		window.resultCodeMirror.setValue(result);
 	};
 });
+
+
+var SnippetCtrl = foreachline.controller('SnippetCtrl', ['$scope', '$http', function ($scope, $http) {
+	$scope.snippetsArray = [];
+	$scope.setCodeMirror = function (data) {
+		CodeMirror.fromTextArea(document.getElementById(data), { lineNumbers: true, lineWrapping: true, mode: 'javascript', readOnly: false });
+	};
+	var addAuthorAndDescription = function (content, author, description) {
+		var firstLine = '//Written by ' + author;
+		var secondLine = '//' + description;
+		return firstLine + '\r\n' + secondLine + '\r\n' + content;
+	};
+	$http.get('snippets.json').success(function (data) {
+		data.forEach(function (ele) {
+			var eleArr = ele.gist_link.split('/');
+			var id = eleArr[eleArr.length - 1];
+			$http.get("https://api.github.com/gists/" + id).success(function (gist_data) {
+				var filename = '', filecontent = '';
+				for (var file in gist_data.files) {
+					filename = gist_data.files[file].filename;
+					filecontent = gist_data.files[file].content;
+					break;
+				}
+				$scope.snippetsArray.push({
+					gist_url: gist_data.url,
+					gist_description: gist_data.description,
+					gist_filename: filename,
+					gist_content: addAuthorAndDescription(filecontent, gist_data.owner.login, gist_data.description),
+					gist_avatar: gist_data.owner.avatar_url
+				});
+			});
+		});
+	})
+		.error(function () {
+		console.log('error in fetching');
+	});
+}]);
 
 function DialogController($scope, $mdDialog) {
 	$scope.hide = function () {
