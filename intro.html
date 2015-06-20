@@ -74,5 +74,43 @@ I love Banana<br/>
               </div>
               </p>
               <p> In most cases , converting your lines to json seems effective , as you can do manythings like generating Excel sheets with that data.</p>
+              
+              <p>
+                <b>foreachline</b> is a very simple tool. The core idea is not building something complex, rather build something simple that can solve very simple problems faced everyday.
+              </p>
+              <p> For me , one such problem was writing code in bulk which had few patterns that can be made use of. </p>
+              <p>For example , I had about 50 variables equating to other variables , which later are equated vice versa.</p>
+              <p>So , source was , 
+              <div class="code_snip">
+                <br />
+                <div layout=row layout-align="center start">
+                  textBox1.value = obj.Property1; 
+                  textBox2.value = obj.Property2;
+                  textBox3.value = obj.Property3;
+                </div>
+                <br />
+              </div></p>
+             <p> and my expected result was
+             <div class="code_snip">
+                <br />
+                <div layout=row layout-align="center start">
+                   obj.Property1 = textBox1.value; 
+                   obj.Property2 = textBox2.value;
+                   obj.Property3 = textBox3.value;
+                </div>
+                <br />
+              </div></p>
+              <p>The logic for this piece is ,
+                <div class="code_snip">
+                  <br />
+                  <div layout=row layout-align="center start">
+                    var variables = line.replace(';','').split('='); 
+                    line = variables[1] + ' = ' + variables[0] + ';' ; 
+                  </div>
+                  <br />
+                </div>
+              <p>  
+              <p>I face this citeria one in five times a day , while writing code and in need of some standard reusable snippets.So , I have tried to added up snippets.If possible I request you to contribute snippets that can solve yours and someothers problem.</p>
+             
             </md-card-content>
           </md-card>
