@@ -75,6 +75,7 @@ I love Banana<br/>
               </p>
               <p> In most cases , converting your lines to json seems effective , as you can do manythings like generating Excel sheets with that data.</p>
               
+              <h3>My Story</h3>
               <p>
                 <b>foreachline</b> is a very simple tool. The core idea is not building something complex, rather build something simple that can solve very simple problems faced everyday.
               </p>
@@ -84,9 +85,11 @@ I love Banana<br/>
               <div class="code_snip">
                 <br />
                 <div layout=row layout-align="center start">
-                  textBox1.value = obj.Property1; 
-                  textBox2.value = obj.Property2;
-                  textBox3.value = obj.Property3;
+                  <code>
+                  textBox1.value = obj.Property1; <br /> 
+                  textBox2.value = obj.Property2; <br />
+                  textBox3.value = obj.Property3; <br />
+                  </code>
                 </div>
                 <br />
               </div></p>
@@ -94,9 +97,11 @@ I love Banana<br/>
              <div class="code_snip">
                 <br />
                 <div layout=row layout-align="center start">
-                   obj.Property1 = textBox1.value; 
-                   obj.Property2 = textBox2.value;
-                   obj.Property3 = textBox3.value;
+                  <code>
+                   obj.Property1 = textBox1.value; <br /> 
+                   obj.Property2 = textBox2.value; <br />
+                   obj.Property3 = textBox3.value; <br />
+                  </code>
                 </div>
                 <br />
               </div></p>
@@ -104,8 +109,10 @@ I love Banana<br/>
                 <div class="code_snip">
                   <br />
                   <div layout=row layout-align="center start">
-                    var variables = line.replace(';','').split('='); 
-                    line = variables[1] + ' = ' + variables[0] + ';' ; 
+                    <code>
+                    var variables = line.replace(';','').split('=');  <br />
+                    line = variables[1] + ' = ' + variables[0] + ';' ; <br />
+                    </code> 
                   </div>
                   <br />
                 </div>
