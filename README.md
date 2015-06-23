@@ -1,4 +1,4 @@
-Online version - http://scriptnull.github.io/foreachline
+[Click here for an Online version](http://scriptnull.github.io/foreachline)
 
 ### Install 
 ```bash 
